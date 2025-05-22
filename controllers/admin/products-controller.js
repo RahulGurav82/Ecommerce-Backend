@@ -62,7 +62,7 @@ const addProducts = async (req, res) => {
 const fetchAllProducts = async (req, res) => {
   try {
     const listOfProducts = await ProductModel.find({});
-    res.status.json({
+    res.status(200).json({
       success: true,
       data: listOfProducts,
     });
