@@ -66,7 +66,7 @@ const loginUser = async (req, res) => {
 };
 
 // logout
-const logoutUser = () => {
+const logoutUser = (req, res) => {
   res.clearCookie('token').json({
     success : true,
     message : "Logged out successfully!"

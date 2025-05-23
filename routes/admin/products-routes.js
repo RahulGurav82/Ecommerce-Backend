@@ -14,5 +14,5 @@ router.post("/upload-image", upload.single("my_file"), handleImageUpload);
 router.get("/get", fetchAllProducts);
 router.post("/add", addProducts);
 router.put("/edit/:id", editProduct);
-router.post("/delete/:id", deleteProduct);
+router.delete("/delete/:id", deleteProduct);
 module.exports = router;
