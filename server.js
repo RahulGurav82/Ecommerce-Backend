@@ -6,6 +6,7 @@ const cookieParser = require('cookie-parser');
 const cors = require('cors');
 const authRoute = require("./routes/auth/auth-route")
 const adminProductsRoutes = require("./routes/admin/products-routes");
+const shopProductsRoutes = require("./routes/shop/products-routes")
 mongoose
 .connect('mongodb+srv://rahul:rahul@cluster0.l5ugu.mongodb.net/nn ')
 // .connect('mongodb+srv://rahul:rahul@cluster0.l5ugu.mongodb.net/ ')
@@ -31,6 +32,7 @@ app.use(cookieParser());
 app.use(express.json());
 app.use("/api/auth/", authRoute);
 app.use("/api/admin/products", adminProductsRoutes)
+app.use("/api/shop/products", shopProductsRoutes)
 
 app.get("/", (req, res) => {
     res.send("Work")

@@ -44,7 +44,7 @@ const loginUser = async (req, res) => {
       if(!checkPasswordMatch) return res.json({success : false, message : "Incorrect password! please try again"});
 
       const token = jwt.sign({
-        id : checkUser._id, role : checkUser.role, email : checkUser.email
+        id : checkUser._id, role : checkUser.role, email : checkUser.email, username : checkUser.username
       }, 'CLIENT_SECRET_KEY', {expiresIn : '60m'})
 
       res.cookie('token', token, {httpOnly: true, secure : false}).json({
@@ -53,7 +53,8 @@ const loginUser = async (req, res) => {
         user : {
           email : checkUser.email,
           role : checkUser.role,
-          id : checkUser._id
+          id : checkUser._id,
+          username : checkUser.username
         }
       })
   } catch (error) {
