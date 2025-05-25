@@ -7,6 +7,7 @@ const cors = require('cors');
 const authRoute = require("./routes/auth/auth-route")
 const adminProductsRoutes = require("./routes/admin/products-routes");
 const shopProductsRoutes = require("./routes/shop/products-routes")
+const shopCartRoutes = require("./routes/shop/cart-routes")
 mongoose
 .connect('mongodb+srv://rahul:rahul@cluster0.l5ugu.mongodb.net/nn ')
 // .connect('mongodb+srv://rahul:rahul@cluster0.l5ugu.mongodb.net/ ')
@@ -33,6 +34,7 @@ app.use(express.json());
 app.use("/api/auth/", authRoute);
 app.use("/api/admin/products", adminProductsRoutes)
 app.use("/api/shop/products", shopProductsRoutes)
+app.use("/api/shop/cart", shopCartRoutes)
 
 app.get("/", (req, res) => {
     res.send("Work")
