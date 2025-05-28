@@ -14,6 +14,8 @@ const shopOrdersRoutes = require("./routes/shop/order-routes")
 const shopSearchRoutes = require("./routes/shop/search-routes")
 const shopReviewRoutes = require("./routes/shop/review-routes")
 
+const commonFeatureRoutes = require("./routes/common/feature-routes")
+
 
 mongoose
 .connect('mongodb+srv://rahul:rahul@cluster0.l5ugu.mongodb.net/nn ')
@@ -41,12 +43,15 @@ app.use(express.json());
 app.use("/api/auth/", authRoute);
 app.use("/api/admin/products", adminProductsRoutes)
 app.use("/api/admin/orders", adminOrderRoutes)
+
 app.use("/api/shop/products", shopProductsRoutes)
 app.use("/api/shop/cart", shopCartRoutes)
 app.use("/api/shop/address", shopAddressRoutes)
 app.use("/api/shop/order", shopOrdersRoutes)
 app.use("/api/shop/search", shopSearchRoutes)
 app.use("/api/shop/review", shopReviewRoutes)
+
+app.use("/api/common/feature", commonFeatureRoutes)
 
 app.get("/", (req, res) => {
     res.send("Work")
