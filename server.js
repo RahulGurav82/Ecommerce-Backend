@@ -11,6 +11,7 @@ const shopProductsRoutes = require("./routes/shop/products-routes")
 const shopCartRoutes = require("./routes/shop/cart-routes")
 const shopAddressRoutes = require("./routes/shop/address-routes")
 const shopOrdersRoutes = require("./routes/shop/order-routes")
+const shopSearchRoutes = require("./routes/shop/search-routes")
 
 
 mongoose
@@ -43,6 +44,7 @@ app.use("/api/shop/products", shopProductsRoutes)
 app.use("/api/shop/cart", shopCartRoutes)
 app.use("/api/shop/address", shopAddressRoutes)
 app.use("/api/shop/order", shopOrdersRoutes)
+app.use("/api/shop/search", shopSearchRoutes)
 
 app.get("/", (req, res) => {
     res.send("Work")
