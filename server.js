@@ -40,6 +40,7 @@ app.use(
 
 app.use(cookieParser());
 app.use(express.json());
+
 app.use("/api/auth/", authRoute);
 app.use("/api/admin/products", adminProductsRoutes)
 app.use("/api/admin/orders", adminOrderRoutes)

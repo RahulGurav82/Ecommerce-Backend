@@ -59,6 +59,13 @@ const updateOrderStatus = async (req, res) => {
     const {orderStatus} = req.body;
     const order = await OrderModel.findById(id);
 
+    console.log(orderStatus)
+
+    if(!orderStatus) return res.status(400).json({
+      success : false,
+      message : "orderStatus required"
+    });
+
     if(!order) {
       return res.status(404).json({
         success : false,
@@ -66,7 +73,7 @@ const updateOrderStatus = async (req, res) => {
       });
     }
 
-    await OrderModel.findByIDAndUpdate(id, {orderStatus});
+   await OrderModel.findByIdAndUpdate(id, {orderStatus});
 
     res.status(200).json({
       success : true,
