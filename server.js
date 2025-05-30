@@ -15,11 +15,12 @@ const shopSearchRoutes = require("./routes/shop/search-routes")
 const shopReviewRoutes = require("./routes/shop/review-routes")
 
 const commonFeatureRoutes = require("./routes/common/feature-routes")
+require("dotenv").config();
+
 
 
 mongoose
-.connect('mongodb+srv://rahul:rahul@cluster0.l5ugu.mongodb.net/nn ')
-// .connect('mongodb+srv://rahul:rahul@cluster0.l5ugu.mongodb.net/ ')
+.connect(process.env.MONGO_URI)
 .then(() => console.log("DB Connected"))
 .catch((err) => console.log("Error While DB Connect : ", err))
 

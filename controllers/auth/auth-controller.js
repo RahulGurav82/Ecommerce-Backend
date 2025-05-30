@@ -65,7 +65,7 @@ const loginUser = async (req, res) => {
         email: checkUser.email,
         username: checkUser.username,
       },
-      "CLIENT_SECRET_KEY",
+      process.env.CLIENT_SECRET_KEY,
       { expiresIn: "60m" }
     );
 
@@ -104,7 +104,7 @@ const authMiddleware = (req, res, next) => {
       message: "Unauthorised user!",
     });
   try {
-    const decoded = jwt.verify(token, "CLIENT_SECRET_KEY");
+    const decoded = jwt.verify(token, process.env.CLIENT_SECRET_KEY);
     req.user = decoded;
     next();
   } catch (err) {

@@ -13,12 +13,12 @@ const addProductReview = async (req, res) => {
       orderStatus: "confirmed",
     });
 
-    // if (!order) {
-    //   return res.status(403).json({
-    //     success: false,
-    //     message: "You need to purchase product to review it.",
-    //   });
-    // }
+    if (!order) {
+      return res.status(403).json({
+        success: false,
+        message: "You need to purchase product to review it.",
+      });
+    }
 
     const checkExistingReview = await ProductReview.findOne({
       productId,
