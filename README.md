@@ -2,7 +2,7 @@
 
 A robust and scalable REST API backend for the ShopHub e-commerce platform. Built with Node.js, Express.js, and MongoDB, this API provides comprehensive e-commerce functionality including user authentication, product management, order processing, and payment integration.
 
-## Fronted-Repo => https://github.com/RahulGurav82/Ecommerce-Frontend
+## Frontend-Repo => https://github.com/RahulGurav82/Ecommerce-Frontend
 
 
 ## 🌟 Features
