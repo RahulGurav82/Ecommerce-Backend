@@ -69,7 +69,12 @@ const loginUser = async (req, res) => {
       { expiresIn: "60m" }
     );
 
-    res.cookie("token", token, { httpOnly: true, secure: false }).json({
+    res.cookie("token", token, {
+    httpOnly: true,
+    secure: true, // ✅ true for HTTPS
+    sameSite: 'None', // ✅ required when using cross-site cookies
+    maxAge: 60 * 60 * 1000 // optional: 1 hour
+}).json({
       success: true,
       message: "Logged in successfully",
       user: {
