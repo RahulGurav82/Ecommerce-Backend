@@ -4,6 +4,8 @@ const addFeatureImage = async (req, res) => {
   try {
     const { image } = req.body;
 
+    console.log(image, "reach");
+
     const featuresImages = new Feature({
       image,
     });
