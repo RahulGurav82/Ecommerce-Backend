@@ -26,7 +26,7 @@ mongoose
 
 app.use(
     cors({
-        origin : 'https://ecommerce-frontend-nine-rouge.vercel.app',
+        origin : process.env.FRONTEND_URL,
         methods : ['GET', 'POST', 'DELETE', 'PUT'],
         allowedHeaders : [
             "Content-Type",
