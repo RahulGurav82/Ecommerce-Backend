@@ -2,9 +2,9 @@ const Feature = require("../../models/Features.model");
 
 const addFeatureImage = async (req, res) => {
   try {
+    console.log("reach");
     const { image } = req.body;
 
-    console.log(image, "reach");
 
     const featuresImages = new Feature({
       image,
